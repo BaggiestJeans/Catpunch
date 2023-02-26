@@ -1,5 +1,6 @@
 import pygame
 import BaseGame
+import Online
 import AI
 import Options
 pygame.init()
@@ -61,18 +62,17 @@ class Button():
             self.hover=False
         if pygame.mouse.get_pressed()==(1,0,0) and self.click==False and self.hover==True:
             if self.type==playimg:
-                BaseGame.base(1)
+                Online.base(2)
                 self.click=True
             if self.type==optimg:
                 print("options")
                 Options.base()
-                self.click=True
-                
+                self.click=True    
             if self.type==tuimg:
                 print("Tutorial")
                 self.click=True
             if self.type==aimg:
-                BaseGame.base(2)
+                BaseGame.base(3)
                 self.click=True
         if pygame.mouse.get_pressed()==(0,0,0):
             self.click=False
@@ -80,7 +80,7 @@ class Button():
             screen.blit(self.image,(self.rect.x,self.rect.y))
         if self.hover==True:
             screen.blit(self.select,(self.rect.x,self.rect.y))
-
+        
 
 play=Button((SW/2),(SH/3)-50,playimg,10,psimg)
 ai=Button((SW/2),(SH/3)+50,aimg,10,asimg)

@@ -1,9 +1,10 @@
 import os
 import pygame
 from Player import Fighter
+from network import Network
+import pickle
 import time
 import sys
-from network import Network
 pygame.joystick.init()
 pygame.init()
 def base(player):
@@ -56,13 +57,15 @@ def base(player):
         elif player==2:
             pygame.draw.rect(screen, (0,0,255),(x,y,400,30))
             pygame.draw.rect(screen, (255,255,0),(x,y,(-1*(hp-100)/100)*400,30))
-            # pygame.draw.rect(screen, (255,255,0),(x,y,400,30))
-            # pygame.draw.rect(screen, (0,0,255),(x,y,(400*(hp/100)),30))
+
 
     pause=False
     run=True
     while run:
         clock.tick(60)
+        n = Network()
+        player = (n.getP())
+        n.send(fighters)
         draw_bg()
         dhb(fig1.hp,20,20,1)
         draw_text(str(fig1.hp),score,(200,0,0),(30),60)
@@ -99,6 +102,6 @@ def base(player):
                     run=False         
             if event.type == pygame.QUIT:
                 sys.exit()
-            
-        
+                
         pygame.display.update()
+base(2)

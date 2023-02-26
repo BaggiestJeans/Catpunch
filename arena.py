@@ -1,14 +1,14 @@
 import pygame
 from pygame.locals import *
 pygame.init()
-SW=100
-SH=100
+SW=1000
+SH=1000
 screen=pygame.display.set_mode((SW,SH))                        
 run=True
-tile_size=0
+tile_size=10
 block=pygame.image.load("Tile_Purple.png")
 def draw_grid():
-	for line in range(0, 6):
+	for line in range(0,10):
 		pygame.draw.line(screen, (255, 255, 255), (0, line * tile_size), (SW, line * tile_size))
 		pygame.draw.line(screen, (255, 255, 255), (line * tile_size, 0), (line * tile_size, SH))
 

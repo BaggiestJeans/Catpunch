@@ -1,6 +1,6 @@
 import os
 import pygame
-from fig1 import Fighter
+from Player import Fighter
 import time
 import sys
 
