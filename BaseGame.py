@@ -3,7 +3,6 @@ import pygame
 from Player import Fighter
 import time
 import sys
-from network import Network
 pygame.joystick.init()
 pygame.init()
 def base(player):
@@ -52,9 +51,9 @@ def base(player):
     def dhb(hp,x,y,player):
         if player==1:
             pygame.draw.rect(screen, (255,255,0),(x,y,400,30))
-            pygame.draw.rect(screen, (0,0,255),(x,y,(400*(hp/100)),30))
+            pygame.draw.rect(screen, (0,199,200),(x,y,(400*(hp/100)),30))
         elif player==2:
-            pygame.draw.rect(screen, (0,0,255),(x,y,400,30))
+            pygame.draw.rect(screen, (0,199,200),(x,y,400,30))
             pygame.draw.rect(screen, (255,255,0),(x,y,(-1*(hp-100)/100)*400,30))
             # pygame.draw.rect(screen, (255,255,0),(x,y,400,30))
             # pygame.draw.rect(screen, (0,0,255),(x,y,(400*(hp/100)),30))

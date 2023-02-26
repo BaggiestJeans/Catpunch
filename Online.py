@@ -104,4 +104,3 @@ def base(player):
                 sys.exit()
                 
         pygame.display.update()
-base(2)
