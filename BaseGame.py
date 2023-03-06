@@ -55,8 +55,6 @@ def base(player):
         elif player==2:
             pygame.draw.rect(screen, (0,199,200),(x,y,400,30))
             pygame.draw.rect(screen, (255,255,0),(x,y,(-1*(hp-100)/100)*400,30))
-            # pygame.draw.rect(screen, (255,255,0),(x,y,400,30))
-            # pygame.draw.rect(screen, (0,0,255),(x,y,(400*(hp/100)),30))
 
     pause=False
     run=True
@@ -82,8 +80,8 @@ def base(player):
             fighters[p].update()
 
             if fighters[p].hp<=0 and oc>=0:
-                screen.blit(thumbs,(0,0))
-                draw_text("Player "+str(p)+" wins",font,(200,0,0),(SW/5),SH/3)
+                # screen.blit(thumbs,(0,0))
+                draw_text("Player"+str(p)+" wins",font,(200,0,0),(SW/6),SH/3)
                 if oc<=0:
                         run=False
                         
