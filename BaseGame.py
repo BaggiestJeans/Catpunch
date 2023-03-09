@@ -5,9 +5,9 @@ import time
 import sys
 pygame.joystick.init()
 pygame.init()
-def base(player):
-    SW=1080
-    SH=720
+def base(player,sw,sh):
+    SW=sw
+    SH=sh
     ratio=SW/SH
     FLOOR=SH/10
     screen=pygame.display.set_mode((SW,SH))

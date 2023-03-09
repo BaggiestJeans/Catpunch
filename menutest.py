@@ -2,9 +2,10 @@ import pygame
 import BaseGame
 import Online
 import Options
+import os 
 pygame.init()
 
-SW=1080
+SW=1000
 SH=720
 screen=pygame.display.set_mode((SW,SH))#sets screen dimension and surface
 clock=pygame.time.Clock()
@@ -62,17 +63,17 @@ class Button():#creates button class
             self.hover=False
         if pygame.mouse.get_pressed()==(1,0,0) and self.click==False and self.hover==True:#Runs certain program based on button pressed
             if self.type==playimg:
-                BaseGame.base(2)
+                BaseGame.base(2,SW,SH)
                 self.click=True
             if self.type==optimg:
                 print("options")
-                Options.base()
+                Options.base(SW,SH)
                 self.click=True    
             if self.type==tuimg:
                 print("Tutorial")
                 self.click=True
             if self.type==aimg:
-                BaseGame.base(3)
+                BaseGame.base(3,SW,SH)
                 self.click=True
         if pygame.mouse.get_pressed()==(0,0,0):
             self.click=False
